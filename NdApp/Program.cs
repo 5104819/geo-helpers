@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,13 +9,13 @@ namespace NdApp
     {
 
         static readonly List<Point> Points = new List<Point> {
-            new Point { Name = @"Object 1", X= 55.1531574, Y= 61.3822603},
-            new Point { Name = @"Object 2", X= 55.153376, Y= 61.3815421},
-            new Point { Name = @"Object 3", X= 55.1528871,Y= 61.3831837},
-            new Point { Name = @"Object 4", X= 55.1510785,Y= 61.3851864},
-            new Point { Name = @"TourPay", X= 55.1526734,Y= 61.3834495},
-            new Point { Name = @"Point 5", X= 55.153221,Y= 61.382420},
-            new Point { Name = @"Point 6", X= 55.154174,Y= 61.382548},
+            new Point { Name = @"Point 1", X= 55.1531574, Y= 61.3822603},
+            new Point { Name = @"Point 2", X= 55.1533764, Y= 61.3815421},
+            new Point { Name = @"Point 3", X= 55.1528871, Y= 61.3831837},
+            new Point { Name = @"Point 4", X= 55.1510785, Y= 61.3851864},
+            new Point { Name = @"Point 7", X= 55.1526734, Y= 61.3834495},
+            new Point { Name = @"Point 5", X= 55.1532215, Y= 61.3824206},
+            new Point { Name = @"Point 6", X= 55.1541746, Y= 61.3825488},
         };
 
         static void Main()
@@ -27,13 +28,13 @@ namespace NdApp
             Console.WriteLine($"{here.Name} : ({here.X}, {here.Y})");
             foreach (var item in nearest)
             {
-                Console.WriteLine($"{item.Name} : ({item.X}, {item.Y}). Distance: {(decimal)Distance(item, here)}");
+                Console.WriteLine($"{item.Name.PadRight(15)} : ({item.X}, {item.Y}). Distance: {(decimal)Distance(item, here)}");
             }
             Console.WriteLine(new string('_', 30));
             Console.WriteLine(nearest[0]?.Name);
             Console.WriteLine(new string('_', 30));
-            Console.WriteLine($"Distance: {distanceKm * 1000:F0}m ");
-            Console.ReadLine();
+            Console.WriteLine($"Distance: {distanceKm * 1000:F2}m ");
+            Console.ReadLine(); 
         }
 
         static double Distance(Point p2, Point p1)
@@ -65,7 +66,7 @@ namespace NdApp
             return earthRadiusKm * c;
         }
 
-        static List<Point> SortByDistance(Point myPt, List<Point> pointList)
+        private static List<Point> SortByDistance(Point myPt, List<Point> pointList)
         {
             return pointList.OrderBy(x => Distance(myPt, x)).ToList();
         }
