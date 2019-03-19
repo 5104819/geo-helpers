@@ -8,10 +8,10 @@ namespace NdApp
     {
 
         static readonly List<Point> Points = new List<Point> {
-            new Point { Name = @"Пятерочка", X= 55.1531574, Y= 61.3822603},
-            new Point { Name = @"Продукты", X= 55.153376, Y= 61.3815421},
-            new Point { Name = @"Разливное № 1", X= 55.1528871,Y= 61.3831837},
-            new Point { Name = @"Www.icafe", X= 55.1510785,Y= 61.3851864},
+            new Point { Name = @"Object 1", X= 55.1531574, Y= 61.3822603},
+            new Point { Name = @"Object 2", X= 55.153376, Y= 61.3815421},
+            new Point { Name = @"Object 3", X= 55.1528871,Y= 61.3831837},
+            new Point { Name = @"Object 4", X= 55.1510785,Y= 61.3851864},
         };
 
         static void Main()
